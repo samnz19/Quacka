@@ -1,3 +1,6 @@
+using Microsoft.AspNet.Identity;
+using Quacka.Models;
+
 namespace Quacka.Migrations
 {
     using System;
@@ -26,6 +29,11 @@ namespace Quacka.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+            var user = new ApplicationUser {UserName = "foo@bar", Email = "foo@bar"};
+            var manager = new UserManager<ApplicationUser>();
+            var result = UserManager<ApplicationUser>.CreateAsync(user, "password");
+            
         }
     }
 }
