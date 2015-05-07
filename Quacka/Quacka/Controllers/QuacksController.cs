@@ -1,7 +1,10 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 using Quacka.Models;
 
 namespace Quacka.Controllers
@@ -13,7 +16,28 @@ namespace Quacka.Controllers
         // GET: Quacks
         public ActionResult Index()
         {
-            return View(db.Quacks.OrderByDescending(q => q.CreatedAt).ToList());
+            List <Quack> quacks = db.Quacks.OrderByDescending(q => q.CreatedAt).ToList();
+            return View(new FeedViewModel
+            {
+                New = new Quack(),
+                Quacks = quacks
+            });
+        }
+
+        // POST: Quacks
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Index(FeedViewModel viewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                string currentUser = User.Identity.GetUserId();
+                viewModel.New.Owner = db.Users.Single(u => u.Id == currentUser);
+                viewModel.New.CreatedAt = DateTime.Now;
+                db.Quacks.Add(viewModel.New);
+                db.SaveChanges();
+            }
+            return RedirectToRoute("Quacks");
         }
 
         // GET: Quacks/Details/5
@@ -42,13 +66,13 @@ namespace Quacka.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Body,CreatedAt")] Quack quack)
+        public ActionResult Create([Bind(Include = "Id,Body,CreatedAt,Owner")] Quack quack)
         {
             if (ModelState.IsValid)
             {
                 db.Quacks.Add(quack);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToRoute("Quacks");
             }
 
             return View(quack);
@@ -80,7 +104,7 @@ namespace Quacka.Controllers
             {
                 db.Entry(quack).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToRoute("Quacks");
             }
             return View(quack);
         }
@@ -108,7 +132,7 @@ namespace Quacka.Controllers
             Quack quack = db.Quacks.Find(id);
             db.Quacks.Remove(quack);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToRoute("Index");
         }
 
         protected override void Dispose(bool disposing)

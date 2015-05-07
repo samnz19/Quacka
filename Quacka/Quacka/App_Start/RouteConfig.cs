@@ -19,7 +19,7 @@ namespace Quacka
             routes.MapRoute(
                 "Profile",
                 "{userName}",
-                new {controller = "Profiles", action = "View"}
+                new {controller = "Profiles", action = "Show"}
             );
 
             routes.MapRoute(
