@@ -11,6 +11,8 @@ namespace Quacka.Models
     public class ApplicationUser : IdentityUser
     {
         public virtual List<Quack> Quacks { get; set; }
+        public virtual List<ApplicationUser> Following { get; set; }
+        public virtual List<ApplicationUser> Followers { get; set; } 
         
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
@@ -37,8 +39,17 @@ namespace Quacka.Models
             return new ApplicationDbContext();
         }
 
-        //public System.Data.Entity.DbSet<Quacka.Models.ApplicationUser> ApplicationUsers { get; set; }
-
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<ApplicationUser>()
+                .HasMany(u => u.Followers)
+                .WithMany(u => u.Following)
+                .Map(m => m
+                    .MapLeftKey("UserId")
+                    .MapRightKey("FollowerId")
+                    .ToTable("UserFollowers"));
+        }
         
     }
 }
