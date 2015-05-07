@@ -11,8 +11,10 @@ namespace Quacka.Models
         public int Id { get; set; }
         [MaxLength(140)]
         [Required]
+        [Display(Name = "Latest...")]
         public string Body { get; set; }
-        [Display(Name = "Created")]
+        [Display(Name = "Quacked At...")]
         public DateTime CreatedAt { get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
     }
 }

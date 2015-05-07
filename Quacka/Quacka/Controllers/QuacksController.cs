@@ -17,7 +17,7 @@ namespace Quacka.Controllers
         // GET: Quacks
         public ActionResult Index()
         {
-            return View(db.Quacks.ToList());
+            return View(db.Quacks.OrderByDescending(q => q.CreatedAt).ToList());
         }
 
         // GET: Quacks/Details/5
