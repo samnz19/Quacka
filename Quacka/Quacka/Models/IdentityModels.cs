@@ -37,6 +37,8 @@ namespace Quacka.Models
             return new ApplicationDbContext();
         }
 
+        //public System.Data.Entity.DbSet<Quacka.Models.ApplicationUser> ApplicationUsers { get; set; }
+
         
     }
 }
