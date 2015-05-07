@@ -20,7 +20,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            <strong>@Html.DisplayFor(modelItem => item.ApplicationUser.UserName)</strong> @Html.DisplayFor(modelItem => item.Body)
+            <strong>@Html.DisplayFor(modelItem => item.Owner.UserName)</strong> @Html.DisplayFor(modelItem => item.Body)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.CreatedAt)

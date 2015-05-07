@@ -36,5 +36,7 @@ namespace Quacka.Models
         {
             return new ApplicationDbContext();
         }
+
+        
     }
 }
