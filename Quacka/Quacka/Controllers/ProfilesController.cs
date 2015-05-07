@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 using Quacka.Models;
 
 namespace Quacka.Controllers
@@ -21,6 +22,22 @@ namespace Quacka.Controllers
             return RedirectToRoute("Quacks");
         }
 
+        public ActionResult Follow(string UserName = "")
+        {
+            if (UserName != "")
+            {
+                ApplicationUser userToFollow = db.Users.SingleOrDefault(u => u.UserName == UserName + "@quacka.com");
+                if (userToFollow != null)
+                {
+                    string userId = User.Identity.GetUserId();
+                    ApplicationUser currentUser = db.Users.Single(u => u.Id == userId);
+                    userToFollow.Followers.Add(currentUser);
+                    db.SaveChanges();
+                }
+            }
+            return RedirectToRoute("Profile", new {userName = UserName});
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -29,5 +46,7 @@ namespace Quacka.Controllers
             }
             base.Dispose(disposing);
         }
+
+     
     }
 }
