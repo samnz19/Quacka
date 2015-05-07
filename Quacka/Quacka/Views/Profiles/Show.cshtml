@@ -15,7 +15,7 @@
         <th></th>
     </tr>
 
-        @foreach (var quack in @Model.Quacks)
+        @foreach (var quack in @Model.Quacks.OrderByDescending(q => q.CreatedAt))
         {
             <tr>
                 <td>@quack.Body</td>
