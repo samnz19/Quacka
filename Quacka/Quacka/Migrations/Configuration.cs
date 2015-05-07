@@ -43,11 +43,11 @@ namespace Quacka.Migrations
             //    );
             //
 
-            if (!(context.Users.Any(u => u.UserName == "sam@quacka")))
+            if (!(context.Users.Any(u => u.UserName == "sam@quacka.com")))
             {
                 var userStore = new UserStore<ApplicationUser>(context);
                 var userManager = new UserManager<ApplicationUser>(userStore);
-                var userToInsert = new ApplicationUser { UserName = "sam@quacka", Quacks = new List<Quack>
+                var userToInsert = new ApplicationUser { UserName = "sam@quacka.com", Quacks = new List<Quack>
                 {
                     new Quack { Body = "If you've ever been quite the picture? : re: carhenge... think I'm a washboard to say thanks... your.", CreatedAt = RandomDateTime() },
                     new Quack { Body = "Sitting here laughing at Cal's INTENSE expression in New Zealand | Gains Is killing your book is?", CreatedAt = RandomDateTime() },
@@ -61,11 +61,11 @@ namespace Quacka.Migrations
                 userManager.Create(userToInsert, "password");
             } 
 
-            if (!(context.Users.Any(u => u.UserName == "sean@quacka")))
+            if (!(context.Users.Any(u => u.UserName == "sean@quacka.com")))
             {
                 var userStore = new UserStore<ApplicationUser>(context);
                 var userManager = new UserManager<ApplicationUser>(userStore);
-                var userToInsert = new ApplicationUser { UserName = "sean@quacka", Quacks = new List<Quack>
+                var userToInsert = new ApplicationUser { UserName = "sean@quacka.com", Quacks = new List<Quack>
                 {
                     new Quack { Body = "I know you don't care. Beach tomorrow anyone? Why so serious", CreatedAt = RandomDateTime() },
                     new Quack { Body = "Right person, wrong time. Can't go home alone again. Me but as an owl", CreatedAt = RandomDateTime() },
@@ -75,13 +75,16 @@ namespace Quacka.Migrations
                     new Quack { Body = "A good strategy for Germany is to score quickly on Brazil, then take Argentina, Peru, and Venezuela and enjoy two extra armies per turn.", CreatedAt = RandomDateTime() },
                 }};
                 userManager.Create(userToInsert, "password");
-            } 
+            }
 
-            if (!(context.Users.Any(u => u.UserName == "olivia@quacka")))
+            if (!(context.Users.Any(u => u.UserName == "olivia@quacka.com")))
             {
                 var userStore = new UserStore<ApplicationUser>(context);
                 var userManager = new UserManager<ApplicationUser>(userStore);
-                var userToInsert = new ApplicationUser { UserName = "olivia@quacka", Quacks = new List<Quack>
+                var userToInsert = new ApplicationUser
+                {
+                    UserName = "olivia@quacka.com",
+                    Quacks = new List<Quack>
                 {
                     new Quack { Body = "Individual players are strictly barred from prolonged gyrations.", CreatedAt = RandomDateTime() },
                     new Quack { Body = "And I was right then, and I was right yesterday, and I'm right today.", CreatedAt = RandomDateTime() },
@@ -90,13 +93,16 @@ namespace Quacka.Migrations
                     new Quack { Body = "Nathan's Hot Dog Eating Contest? More like Nathan's Hot Blog Eating Contest, amirite?", CreatedAt = RandomDateTime() },
                 }};
                 userManager.Create(userToInsert, "password");
-            } 
+            }
 
-            if (!(context.Users.Any(u => u.UserName == "rich@quacka")))
+            if (!(context.Users.Any(u => u.UserName == "rich@quacka.com")))
             {
                 var userStore = new UserStore<ApplicationUser>(context);
                 var userManager = new UserManager<ApplicationUser>(userStore);
-                var userToInsert = new ApplicationUser { UserName = "rich@quacka", Quacks = new List<Quack>
+                var userToInsert = new ApplicationUser
+                {
+                    UserName = "rich@quacka.com",
+                    Quacks = new List<Quack>
                 {
                     new Quack { Body = "Someone to provide for you proper grammar I love the smell of I despise. Ask your mother with morals MFA shotgunning beers", CreatedAt = RandomDateTime() },
                     new Quack { Body = "I'm a nice guy, my beard performance art other shenanigans skydiving for real though. Snapchat I'm too lazy to keep typing", CreatedAt = RandomDateTime() },
