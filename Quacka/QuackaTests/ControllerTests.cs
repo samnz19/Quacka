@@ -3,9 +3,11 @@
 namespace QuackaTests
 {
     [TestFixture]
-    public class ModelTests
+    public class ControllerTests
     {
         [Test]
         public void 
+
+         
     }
 }
