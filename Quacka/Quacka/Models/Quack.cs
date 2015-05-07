@@ -15,5 +15,6 @@ namespace Quacka.Models
         public string Body { get; set; }
         [Display(Name = "Quacked At...")]
         public DateTime CreatedAt { get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
     }
 }
