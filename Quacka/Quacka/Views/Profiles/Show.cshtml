@@ -1,7 +1,15 @@
 ﻿@using System.Linq
 @model Quacka.Models.ApplicationUser
 
-<h2>@Model.UserName</h2>
+<h2>@Model.UserName 
+@if (User.Identity.IsAuthenticated)
+{
+    using (Html.BeginForm("Follow", "Profiles", FormMethod.Post))
+    {
+        @Html.HiddenFor(model => model.UserName)
+        <input type="submit" value="Follow" class="btn btn-default"/> 
+    } 
+}</h2>
 
 <div>
     <table class="table">

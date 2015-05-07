@@ -183,6 +183,10 @@
     <Compile Include="Migrations\201505070539287_renamed-foreign-key.Designer.cs">
       <DependentUpon>201505070539287_renamed-foreign-key.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201505071337204_follow.cs" />
+    <Compile Include="Migrations\201505071337204_follow.Designer.cs">
+      <DependentUpon>201505071337204_follow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\FeedViewModel.cs" />
@@ -274,6 +278,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201505070539287_renamed-foreign-key.resx">
       <DependentUpon>201505070539287_renamed-foreign-key.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505071337204_follow.resx">
+      <DependentUpon>201505071337204_follow.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
