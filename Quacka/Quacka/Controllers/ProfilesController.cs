@@ -22,7 +22,19 @@ namespace Quacka.Controllers
             {
                 return RedirectToAction("Login","Account");
             }
-            
+        }
+
+        public ActionResult View(string userName = "")
+        {
+            if (userName != "")
+            {
+                var user = db.Users.SingleOrDefault(u => u.UserName == userName + "@quacka.com");
+                if (user != null)
+                {
+                    return View(user);
+                }
+            }
+            return RedirectToRoute("Quacks");
         }
 
         //// GET: Profiles/Details/5

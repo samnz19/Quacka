@@ -253,11 +253,7 @@
     <Content Include="Views\Quacks\Details.cshtml" />
     <Content Include="Views\Quacks\Edit.cshtml" />
     <Content Include="Views\Quacks\Index.cshtml" />
-    <Content Include="Views\Profiles\Create.cshtml" />
-    <Content Include="Views\Profiles\Delete.cshtml" />
-    <Content Include="Views\Profiles\Details.cshtml" />
-    <Content Include="Views\Profiles\Edit.cshtml" />
-    <Content Include="Views\Profiles\Index.cshtml" />
+    <Content Include="Views\Profiles\View.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
