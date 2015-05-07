@@ -30,23 +30,11 @@ namespace Quacka.Migrations
         
         protected override void Seed(Quacka.Models.ApplicationDbContext context)
         {
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+            var userStore = new UserStore<ApplicationUser>(context);
+            var userManager = new UserManager<ApplicationUser>(userStore);
 
             if (!(context.Users.Any(u => u.UserName == "sam@quacka.com")))
             {
-                var userStore = new UserStore<ApplicationUser>(context);
-                var userManager = new UserManager<ApplicationUser>(userStore);
                 var userToInsert = new ApplicationUser { UserName = "sam@quacka.com", Quacks = new List<Quack>
                 {
                     new Quack { Body = "If you've ever been quite the picture? : re: carhenge... think I'm a washboard to say thanks... your.", CreatedAt = RandomDateTime() },
@@ -63,12 +51,10 @@ namespace Quacka.Migrations
 
             if (!(context.Users.Any(u => u.UserName == "sean@quacka.com")))
             {
-                var userStore = new UserStore<ApplicationUser>(context);
-                var userManager = new UserManager<ApplicationUser>(userStore);
                 var userToInsert = new ApplicationUser { UserName = "sean@quacka.com", Quacks = new List<Quack>
                 {
                     new Quack { Body = "I know you don't care. Beach tomorrow anyone? Why so serious", CreatedAt = RandomDateTime() },
-                    new Quack { Body = "Right person, wrong time. Can't go home alone again. Me but as an owl", CreatedAt = RandomDateTime() },
+                     new Quack { Body = "Right person, wrong time. Can't go home alone again. Me but as an owl", CreatedAt = RandomDateTime() },
                     new Quack { Body = "When the muskrat writes When the dog thrives When I'm feeling squared I simply remember my favorite things And then I don't feel so prepared", CreatedAt = RandomDateTime() },
                     new Quack { Body = "Squat puckish premiums loved up with plaques These are a few of my favorite kickbacks", CreatedAt = RandomDateTime() },
                     new Quack { Body = "Washouts on wardens and adjuncts on islands Stringed bumpy returns and loose leaky highlands", CreatedAt = RandomDateTime() },
@@ -79,8 +65,6 @@ namespace Quacka.Migrations
 
             if (!(context.Users.Any(u => u.UserName == "olivia@quacka.com")))
             {
-                var userStore = new UserStore<ApplicationUser>(context);
-                var userManager = new UserManager<ApplicationUser>(userStore);
                 var userToInsert = new ApplicationUser
                 {
                     UserName = "olivia@quacka.com",
@@ -97,8 +81,6 @@ namespace Quacka.Migrations
 
             if (!(context.Users.Any(u => u.UserName == "rich@quacka.com")))
             {
-                var userStore = new UserStore<ApplicationUser>(context);
-                var userManager = new UserManager<ApplicationUser>(userStore);
                 var userToInsert = new ApplicationUser
                 {
                     UserName = "rich@quacka.com",

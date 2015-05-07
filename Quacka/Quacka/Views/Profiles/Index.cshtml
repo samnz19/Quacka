@@ -1,0 +1,21 @@
+﻿@model Quacka.Models.ApplicationUser
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="table">
+    @foreach (var quack in Model.Quacks)
+    {
+        <tr>
+            <td>@quack.Body</td>
+        </tr>
+    }
+
+
+</table>

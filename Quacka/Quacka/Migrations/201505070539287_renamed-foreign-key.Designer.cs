@@ -7,13 +7,13 @@ namespace Quacka.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class changeidname : IMigrationMetadata
+    public sealed partial class renamedforeignkey : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(changeidname));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(renamedforeignkey));
         
         string IMigrationMetadata.Id
         {
-            get { return "201505070427114_change-id-name"; }
+            get { return "201505070539287_renamed-foreign-key"; }
         }
         
         string IMigrationMetadata.Source

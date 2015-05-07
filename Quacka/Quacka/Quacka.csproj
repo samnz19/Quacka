@@ -163,6 +163,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProfilesController.cs" />
     <Compile Include="Controllers\QuacksController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -179,16 +180,15 @@
     <Compile Include="Migrations\201505070410539_application-user-id.Designer.cs">
       <DependentUpon>201505070410539_application-user-id.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201505070427114_change-id-name.cs" />
-    <Compile Include="Migrations\201505070427114_change-id-name.Designer.cs">
-      <DependentUpon>201505070427114_change-id-name.cs</DependentUpon>
+    <Compile Include="Migrations\201505070539287_renamed-foreign-key.cs" />
+    <Compile Include="Migrations\201505070539287_renamed-foreign-key.Designer.cs">
+      <DependentUpon>201505070539287_renamed-foreign-key.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Quack.cs" />
-    <Compile Include="Models\QuackWithUserViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -253,6 +253,11 @@
     <Content Include="Views\Quacks\Details.cshtml" />
     <Content Include="Views\Quacks\Edit.cshtml" />
     <Content Include="Views\Quacks\Index.cshtml" />
+    <Content Include="Views\Profiles\Create.cshtml" />
+    <Content Include="Views\Profiles\Delete.cshtml" />
+    <Content Include="Views\Profiles\Details.cshtml" />
+    <Content Include="Views\Profiles\Edit.cshtml" />
+    <Content Include="Views\Profiles\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -274,8 +279,8 @@
     <EmbeddedResource Include="Migrations\201505070410539_application-user-id.resx">
       <DependentUpon>201505070410539_application-user-id.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201505070427114_change-id-name.resx">
-      <DependentUpon>201505070427114_change-id-name.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201505070539287_renamed-foreign-key.resx">
+      <DependentUpon>201505070539287_renamed-foreign-key.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
