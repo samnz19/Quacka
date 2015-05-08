@@ -12,21 +12,33 @@ namespace Quacka
             routes.MapRoute(
                 "Default",
                 "{controller}/{action}/{id}",
-                new { controller = "Home", action = "Index", id = UrlParameter.Optional },
-                new { controller = @"Account|Manage|Profiles|Quacks" }
+                new { controller = "Quacks", action = "Index", id = UrlParameter.Optional },
+                new { controller = @"Account|Manage|Ponds|Quacks" }
             );
 
             routes.MapRoute(
-                "Profile",
+                "MyFlocks",
+                "{myFlocks}",
+                new { controller = "Flocks", action = "Index" },
+                new { myFlocks = @"MyFlocks" }
+            );
+
+            routes.MapRoute(
+                "Pond",
                 "{userName}",
-                new {controller = "Profiles", action = "Show"}
+                new {controller = "Ponds", action = "Show"}
             );
 
             routes.MapRoute(
                 "Quacks",
                 "",
-                new { controller = "Quacks", action = "Index" }
+                new {controller = "Quacks", action = "Index"}
             );
+            //routes.MapRoute(
+            //    "Quacks",
+            //    "{*url}",
+            //    new { controller = "Quacks", action = "Index" }
+            //);
         }
     }
 }

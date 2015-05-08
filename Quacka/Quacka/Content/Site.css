@@ -1,6 +1,8 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    /*changing background colour to resemble water*/
+    background-color:skyblue;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -22,3 +24,130 @@ select,
 textarea {
     max-width: 100%;
 }
+
+.wrapper {
+    width: 80%;
+    background-color: white;
+    margin: auto;
+}
+
+
+.navbar {
+    background-color: #064F96;
+}
+
+.navbar-inverse .navbar-brand {
+  color: white;
+    font-style: italic;
+    font-size: 40px;
+}
+
+#duck {
+    position: fixed;
+    top: 115px;
+    left: 20px;
+}
+
+.body {
+	background-color: #311B1E;
+	position: absolute;
+	top: 50px;
+	width: 150px;
+	height: 180px;
+	border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    z-index: 9;
+}
+
+
+.head {
+	position: absolute;
+	top: 0;
+	left: 5px;
+	width: 140px;
+	height: 140px;
+	background-color: #034403;
+	border-radius: 100px;
+	box-shadow: 0 3px 0 rgba(0,0,0,0.5);
+  z-index: 10;
+}
+
+
+.foot {
+  background: orange;
+  display: inline-block;
+  height: 40px;
+  margin-left: 15px;
+  margin-top: 240px;
+    position: relative;
+    width: 50px;
+}
+
+
+.foot:before {
+  border-bottom: 35px solid orange;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  content: "";
+  height: 0;
+  left: 0;
+  position: absolute;
+  top: -35px;
+  width: 0;
+}
+
+
+.beak {
+  position: absolute;
+  top: 60px;
+  left: 27.5px;
+  width: 0;
+  height: 0;
+  border-left: 42px solid transparent;
+  border-right: 42px solid transparent;
+  border-top: 60px solid orange;
+  border-radius: 50%;	 
+}
+
+
+.left-eye-socket,
+.right-eye-socket {
+  position: absolute;
+  background-color: white;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  top: 20px;
+}
+
+
+.left-eye-socket {
+  left: 20px;  
+}
+
+
+.right-eye-socket {
+  right: 20px;
+}
+
+
+.right-eye,
+.left-eye {
+	position: absolute;
+	background-color: blue;
+	height: 15px;
+	width: 15px;
+	border-radius: 50%;
+  top: 10px;
+  left: 10px;
+}
+
+.crest {
+  position: absolute;
+  color: red;
+  font-size: 50px;
+  z-index: 11;
+  left: 55px;
+  top: 85px;
+}
+
+
