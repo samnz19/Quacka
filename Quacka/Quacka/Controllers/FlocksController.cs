@@ -18,8 +18,8 @@ namespace Quacka.Controllers
             if (currentUser != null)
             {
                 IEnumerable<Quack> quacks = db.Quacks
-                    .OrderByDescending(q => q.CreatedAt)
-                    .Where(q => currentUser.Following.Contains(q.Owner));
+                    .Where(q => currentUser.Following.Contains(q.Owner))
+                    .OrderByDescending(q => q.CreatedAt);
 
                 return View(new ShowViewModel
                 {
