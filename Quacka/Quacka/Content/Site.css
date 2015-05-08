@@ -30,3 +30,12 @@ textarea {
     background-color: white;
     margin: auto;
 }
+
+.navbar-header {
+
+    background-color: cadetblue;
+}
+
+.navbar {
+    background-color: #0169CE;
+}
