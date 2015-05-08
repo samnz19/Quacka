@@ -3,6 +3,23 @@
 
 <h2>@Model.UserName</h2>
 
+@if (@Model.Followers.Any())
+{
+    <div id="followers">
+        <p><em>In @Model.UserName's flock:</em>
+            @string.Join(", ", Model.Followers.ToArray())
+        </p>
+    </div>
+}
+@if (@Model.Following.Any())
+{
+    <div id="following">
+        <p><em>Ducks @Model.UserName is stalking:</em>
+            @string.Join(", ", Model.Following.ToArray())
+        </p>
+    </div>
+}
+
 @if (User.Identity.IsAuthenticated)
 {
     if (!Model.IsFollowing)
@@ -18,7 +35,7 @@
         using (Html.BeginForm("Unflock", "Ponds", FormMethod.Post))
         {
             @Html.HiddenFor(model => model.UserName)
-            <input type="submit" value="Unfollow" class="btn btn-default"/>
+            <input type="submit" value="Unflock" class="btn btn-default"/>
         }
     }
 }

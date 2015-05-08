@@ -22,7 +22,9 @@ namespace Quacka.Controllers
                     {
                         IsFollowing = false,
                         UserName = user.UserName,
-                        Quacks = user.Quacks
+                        Quacks = user.Quacks,
+                        Following = user.Following.Select(u => u.UserName),
+                        Followers = user.Followers.Select(u => u.UserName)
                     };
                     if (currentUser != null)
                     {
@@ -48,7 +50,7 @@ namespace Quacka.Controllers
                     db.SaveChanges();
                 }
             }
-            return RedirectToRoute("Profile", new {userName = UserName});
+            return RedirectToRoute("Pond", new {userName = UserName});
         }
 
         [HttpPost]
@@ -65,7 +67,7 @@ namespace Quacka.Controllers
                     db.SaveChanges();
                 }
             }
-            return RedirectToRoute("Profile", new {userName = UserName});
+            return RedirectToRoute("Pond", new {userName = UserName});
         }
 
         protected override void Dispose(bool disposing)
