@@ -12,8 +12,15 @@ namespace Quacka
             routes.MapRoute(
                 "Default",
                 "{controller}/{action}/{id}",
-                new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+                new { controller = "Quacks", action = "Index", id = UrlParameter.Optional },
                 new { controller = @"Account|Manage|Ponds|Quacks" }
+            );
+
+            routes.MapRoute(
+                "MyFlocks",
+                "{myFlocks}",
+                new { controller = "Flocks", action = "Index" },
+                new { myFlocks = @"MyFlocks" }
             );
 
             routes.MapRoute(
@@ -25,8 +32,13 @@ namespace Quacka
             routes.MapRoute(
                 "Quacks",
                 "",
-                new { controller = "Quacks", action = "Index" }
+                new {controller = "Quacks", action = "Index"}
             );
+            //routes.MapRoute(
+            //    "Quacks",
+            //    "{*url}",
+            //    new { controller = "Quacks", action = "Index" }
+            //);
         }
     }
 }
