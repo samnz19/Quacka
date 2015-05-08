@@ -13,13 +13,13 @@ namespace Quacka
                 "Default",
                 "{controller}/{action}/{id}",
                 new { controller = "Home", action = "Index", id = UrlParameter.Optional },
-                new { controller = @"Account|Manage|Profiles|Quacks" }
+                new { controller = @"Account|Manage|Ponds|Quacks" }
             );
 
             routes.MapRoute(
-                "Profile",
+                "Pond",
                 "{userName}",
-                new {controller = "Profiles", action = "Show"}
+                new {controller = "Ponds", action = "Show"}
             );
 
             routes.MapRoute(
