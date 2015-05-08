@@ -1,0 +1,30 @@
+﻿@using System.Linq
+@model Quacka.Models.ShowViewModel
+
+@{
+    ViewBag.Title = "MyFlocks";
+}
+
+<h2>@Model.UserName</h2>
+
+<div>
+    <table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Quacks.First().Body))
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quacks.First().CreatedAt)
+        </th>
+        <th></th>
+    </tr>
+
+        @foreach (var quack in @Model.Quacks)
+        {
+            <tr>
+                <td>@quack.Body</td>
+                <td>@quack.CreatedAt</td>
+            </tr>
+        }
+    </table>
+</div>

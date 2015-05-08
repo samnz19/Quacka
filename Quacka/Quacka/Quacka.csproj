@@ -161,6 +161,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\FlocksController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PondsController.cs" />
     <Compile Include="Controllers\QuacksController.cs" />
@@ -256,6 +257,7 @@
     <Content Include="Views\Quacks\Edit.cshtml" />
     <Content Include="Views\Quacks\Index.cshtml" />
     <Content Include="Views\Ponds\Show.cshtml" />
+    <Content Include="Views\Flocks\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
