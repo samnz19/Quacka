@@ -48,7 +48,7 @@ namespace Quacka.Controllers
                     db.SaveChanges();
                 }
             }
-            return RedirectToRoute("Profile", new {userName = UserName});
+            return RedirectToRoute("Pond", new {userName = UserName});
         }
 
         [HttpPost]
@@ -65,7 +65,7 @@ namespace Quacka.Controllers
                     db.SaveChanges();
                 }
             }
-            return RedirectToRoute("Profile", new {userName = UserName});
+            return RedirectToRoute("Pond", new {userName = UserName});
         }
 
         protected override void Dispose(bool disposing)
