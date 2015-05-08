@@ -17,20 +17,16 @@ namespace Quacka.Controllers
             ApplicationUser currentUser = db.Users.SingleOrDefault(u => u.Id == userId);
             if (currentUser != null)
             {
-                IEnumerable<Quack> quacks = db.Quacks
-                    .Where(q => currentUser.Following.Contains(q.Owner))
-                    .OrderByDescending(q => q.CreatedAt);
-
                 return View(new ShowViewModel
                 {
                     UserName = currentUser.UserName,
                     Followers = currentUser.Followers.Select(u => u.UserName),
                     Following = currentUser.Following.Select(u => u.UserName),
                     IsFollowing = false,
-                    Quacks = quacks
+                    Quacks = currentUser.Following.Select(f => f.Quacks).SelectMany(q => q).OrderByDescending(q => q.CreatedAt)
                 });
             }
-            return RedirectToRoute("Quacks");
+            return View(new ShowViewModel());
         }
 
         protected override void Dispose(bool disposing)
