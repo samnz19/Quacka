@@ -2,7 +2,7 @@
     padding-top: 50px;
     padding-bottom: 20px;
     /*changing background colour to resemble water*/
-    background-color: dodgerblue;
+    background-color:skyblue;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -31,11 +31,13 @@ textarea {
     margin: auto;
 }
 
-.navbar-header {
-
-    background-color: cadetblue;
-}
 
 .navbar {
-    background-color: #0169CE;
+    background-color: #064F96;
+}
+
+.navbar-inverse .navbar-brand {
+  color: white;
+    font-style: italic;
+    font-size: 40px;
 }
