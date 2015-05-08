@@ -1,4 +1,5 @@
-﻿@model Quacka.Models.FeedViewModel
+﻿@using System.Web.Mvc.Html
+@model Quacka.Models.FeedViewModel
 
 @{
     ViewBag.Title = "Public Feed";
@@ -29,41 +30,25 @@
         </div>
     }
 }
-        @*<table class="table">
-                <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.New.Body)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.New.CreatedAt)
-                    </th>
-                    <th></th>
-                </tr>
+<table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.New.Body)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.New.CreatedAt)
+            </th>
+        </tr>
 
-            @foreach (var item in Model.Quacks) {
-                <tr>
-                    <td>
-                        <strong>@Html.DisplayFor(modelItem => item.Owner.UserName)</strong> @Html.DisplayFor(modelItem => item.Body)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.CreatedAt)
-                    </td>
-
-                </tr>
-            }
-
-            </table>*@
-
-    <div class="view-table">
-    <div class="header-row">
-        @Html.DisplayNameFor(model => model.New.Body)
-    </div>
-    <div class="quack-element">
-    @foreach (var item in Model.Quacks)
-    {
-        <div class="quack-body">@Html.DisplayFor(modelItem => item.Body)</div>
-        <div class="username">@Html.DisplayFor(modelItem => item.Owner.UserName)</div>
-        <div class="created-date">@Html.DisplayFor(modelItem => item.CreatedAt)</div>
+    @foreach (var item in Model.Quacks) {
+        <tr>
+            <td>
+                <strong>@Html.DisplayFor(modelitem => item.Owner.UserName)</strong> @Html.DisplayFor(modelitem => item.Body)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.CreatedAt)
+            </td>
+        </tr>
     }
-    </div>
-    </div>
+</table>
+
