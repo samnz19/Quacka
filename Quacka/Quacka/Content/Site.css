@@ -1,6 +1,8 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    /*changing background colour to resemble water*/
+    background-color: dodgerblue;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -22,3 +24,22 @@ select,
 textarea {
     max-width: 100%;
 }
+
+.wrapper {
+    width: 80%;
+    background-color: white;
+    margin: auto;
+}
+
+/*.whole-quack {
+    width: 50%;
+}
+
+.username {
+    position: absolute;
+}
+
+.created-date {
+    position: absolute;
+    right: 10px;
+}*/
